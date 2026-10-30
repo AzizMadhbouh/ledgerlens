@@ -1,0 +1,44 @@
+{
+  "name": "LedgerLens",
+  "dataColors": [
+    "#0F766E",
+    "#2563EB",
+    "#7C3AED",
+    "#B45309",
+    "#BE185D",
+    "#15803D",
+    "#0891B2",
+    "#4F46E5"
+  ],
+  "background": "#F3F6F8",
+  "foreground": "#102033",
+  "tableAccent": "#0F766E",
+  "good": "#15803D",
+  "neutral": "#64748B",
+  "bad": "#B42318",
+  "maximum": "#102033",
+  "center": "#64748B",
+  "minimum": "#F3F6F8",
+  "textClasses": {
+    "title": {
+      "fontFace": "Segoe UI Semibold",
+      "fontSize": 14,
+      "color": "#102033"
+    },
+    "header": {
+      "fontFace": "Segoe UI Semibold",
+      "fontSize": 11,
+      "color": "#334155"
+    },
+    "label": {
+      "fontFace": "Segoe UI",
+      "fontSize": 9,
+      "color": "#64748B"
+    },
+    "callout": {
+      "fontFace": "Segoe UI Semibold",
+      "fontSize": 24,
+      "color": "#102033"
+    }
+  }
+}

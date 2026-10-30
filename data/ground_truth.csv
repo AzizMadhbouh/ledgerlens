@@ -1,0 +1,26 @@
+document_id,source_file,invoice_number,date_raw,date_iso,vendor,vendor_printed,total_cents,currency,expected_status,expected_reason
+doc-001,invoice_001.pdf,INV-2026-0001,"January 9, 2026",2026-01-09,Northwind Supply Co.,NORTHWIND SUPPLY CO.,118804,USD,accepted,
+doc-002,invoice_002.pdf,INV-2026-0002,23 January 2026,2026-01-23,Acme Cloud Services,ACME CLOUD SERVICES,49362,USD,accepted,
+doc-003,invoice_003.pdf,INV-2026-0003,"February 5, 2026",2026-02-05,Blue Harbor Logistics,Blue Harbor Logistics,191061,USD,accepted,
+doc-004,invoice_004.pdf,INV-2026-0004,18 Feb 2026,2026-02-18,Lumen Office Goods,"LUMEN OFFICE GOODS, INC.",154256,USD,accepted,
+doc-005,invoice_005.pdf,INV-2026-0005,2026-03-02,2026-03-02,Vertex Consulting,Vertex Consulting,652000,USD,accepted,
+doc-006,invoice_006.pdf,INV-2026-0006,"March 13, 2026",2026-03-13,Greenline Energy,GREENLINE ENERGY PLC,115250,USD,accepted,
+doc-007,invoice_007.pdf,INV-2026-0007,27/03/2026,2026-03-27,Atlas Hardware,Atlas Hardware,72528,USD,accepted,
+doc-008,invoice_008.pdf,INV-2026-0008,"April 8, 2026",2026-04-08,Paper & Pixel,PAPER AND PIXEL,546121,USD,accepted,
+doc-009,invoice_009.pdf,INV-2026-0009,21 Apr 2026,2026-04-21,Northwind Supply Co.,NORTHWIND SUPPLY CO.,114258,USD,accepted,
+doc-010,invoice_010.pdf,INV-2026-0010,2026-05-04,2026-05-04,Acme Cloud Services,ACME CLOUD SERVICES,42109,USD,accepted,
+doc-011,invoice_011.pdf,INV-2026-0011,"May 15, 2026",2026-05-15,Blue Harbor Logistics,Blue Harbor Logistics,151009,USD,accepted,
+doc-012,invoice_012.pdf,INV-2026-0012,29/05/2026,2026-05-29,Lumen Office Goods,"LUMEN OFFICE GOODS, INC.",160535,USD,accepted,
+doc-013,invoice_013.pdf,INV-2026-0013,"June 10, 2026",2026-06-10,Vertex Consulting,Vertex Consulting,403000,USD,accepted,
+doc-014,invoice_014.pdf,INV-2026-0014,24 June 2026,2026-06-24,Greenline Energy,GREENLINE ENERGY PLC,113250,USD,accepted,
+doc-015,invoice_015.pdf,INV-2026-0015,"July 7, 2026",2026-07-07,Atlas Hardware,Atlas Hardware,74693,USD,accepted,
+doc-016,invoice_016.pdf,INV-2026-0016,2026-07-20,2026-07-20,Paper & Pixel,PAPER AND PIXEL,329621,USD,accepted,
+doc-017,invoice_017.pdf,INV-2026-0017,"August 3, 2026",2026-08-03,Northwind Supply Co.,NORTHWIND SUPPLY CO.,184729,USD,accepted,
+doc-018,invoice_018.pdf,INV-2026-0018,17 Aug 2026,2026-08-17,Acme Cloud Services,ACME CLOUD SERVICES,49470,USD,accepted,
+doc-019,invoice_019.pdf,INV-2026-0019,"September 1, 2026",2026-09-01,Blue Harbor Logistics,Blue Harbor Logistics,83353,USD,accepted,
+doc-020,invoice_020.pdf,INV-2026-0020,14 September 2026,2026-09-14,Lumen Office Goods,"LUMEN OFFICE GOODS, INC.",241831,USD,accepted,
+doc-021,invoice_021.pdf,INV-2026-0021,2026-09-25,2026-09-25,Vertex Consulting,Vertex Consulting,709000,USD,accepted,
+doc-022,invoice_022.pdf,INV-2026-0022,31/02/2026,,,Greenline Energy,66250,USD,rejected,invalid_date
+doc-023,invoice_023.pdf,INV-2026-0023,"September 18, 2026",,,Atlas Hardware,94394,XYZ,rejected,unsupported_currency
+doc-024,invoice_024.pdf,INV-2026-0024,"September 22, 2026",,,Paper & Pixel,-31240,USD,rejected,non_positive_total
+doc-025,invoice_025.pdf,INV-2026-0025,"September 28, 2026",,,N/A,118804,USD,rejected,invalid_vendor

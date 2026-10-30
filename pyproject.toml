@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ledgerlens"
+version = "0.1.0"
+description = "Local-first invoice extraction pipeline: OCR, Ollama, validation, SQLite, Dagster"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "LedgerLens" }]
+dependencies = [
+    "dagster>=1.8,<2",
+    "langchain-core>=0.3,<2",
+    "langchain-ollama>=0.2,<2",
+    "pandas>=2.2,<4",
+    "pillow>=10.4,<13",
+    "pydantic>=2.8,<3",
+    "pymupdf>=1.24,<2",
+    "pytesseract>=0.3.13,<1",
+    "python-dotenv>=1.0,<2",
+    "reportlab>=4.2,<5",
+]
+
+[project.optional-dependencies]
+dev = [
+    "dagster-webserver>=1.8,<2",
+    "pytest>=8,<10",
+]
+ui = [
+    "dagster-webserver>=1.8,<2",
+]
+
+[project.scripts]
+ledgerlens = "ledgerlens.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+addopts = "-q"

@@ -1,0 +1,27 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.egg-info/
+.env
+
+# Generated pipeline artifacts
+data/invoices/
+data/ocr_text/
+data/extracted/
+data/validation/
+data/exports/
+data/reports/
+data/*.db
+data/*.db-*
+data/dashboard.html
+!data/.gitkeep
+
+# Local Power BI report, not published yet
+*.pbix
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

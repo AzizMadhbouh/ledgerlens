@@ -1,0 +1,31 @@
+// LedgerLens Power BI measures.
+// Load vw_invoices and vw_rejected_documents from SQLite.
+// Mark vw_invoices[invoice_date] as Date and format total_amount as Fixed decimal (2).
+
+Total Spend = SUM(vw_invoices[total_amount])
+
+Invoice Count = COUNTROWS(vw_invoices)
+
+Average Invoice = DIVIDE([Total Spend], [Invoice Count])
+
+Rejected Documents = COUNTROWS(vw_rejected_documents)
+
+Processed Documents = [Invoice Count] + [Rejected Documents]
+
+Straight-Through Rate = DIVIDE([Invoice Count], [Processed Documents])
+
+Rejection Rate = DIVIDE([Rejected Documents], [Processed Documents])
+
+Avg OCR Confidence = AVERAGE(vw_invoices[ocr_confidence])
+
+Vendor Spend Rank =
+RANKX(
+    ALLSELECTED(vw_invoices[vendor]),
+    [Total Spend],
+    [Total Spend],
+    DESC,
+    Dense
+)
+
+// For a month axis, use the invoice_date hierarchy or add a calculated column:
+// Month = FORMAT(vw_invoices[invoice_date], "YYYY-MM")
