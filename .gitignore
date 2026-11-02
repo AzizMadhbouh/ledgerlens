@@ -17,9 +17,6 @@ data/*.db-*
 data/dashboard.html
 !data/.gitkeep
 
-# Local Power BI report, not published yet
-*.pbix
-
 # OS / editor noise
 .DS_Store
 Thumbs.db
