@@ -56,9 +56,26 @@ rejected = pd.read_sql_query("SELECT * FROM vw_rejected_documents", con)
 This requires the same Python environment or a separate Python installation
 with pandas. ODBC is more convenient for refresh.
 
+## Option D - included report and template
+
+`ledgerlens.pbix` is a saved one-page report built from the CSV exports. It is a
+snapshot of the 25-document run in the repository README.
+
+`ledgerlens.pbit` is the same page with no embedded data and a `DataFolder`
+parameter:
+
+1. Run `ledgerlens run` so `data/exports/*.csv` exists.
+2. Open `ledgerlens.pbit` in Power BI Desktop.
+3. When prompted, set `DataFolder` to the absolute path of `data/exports`
+   (no trailing backslash).
+4. Click **Load**, then **Refresh**.
+
+The template binds by column name. A later run with the same schema refreshes
+in place; renaming a column requires updating the visual binding.
+
 ## Page 1 layout
 
-**Header:** dark navy band, `LedgerLens | Invoice operations`, run date.
+**Header:** `LedgerLens — invoice operations` on the page background.
 
 **KPI cards (top row):**
 - Total Spend
@@ -70,10 +87,9 @@ with pandas. ODBC is more convenient for refresh.
 **Charts:**
 - Clustered bar chart: `vendor` on Y, `Total Spend` on X, sorted descending.
 - Line chart: `invoice_date` (or `month`) on X, `Total Spend` on Y.
-- Donut or 100% bar: rejected vs accepted (create a small disconnected table
-  with `Accepted` and `Rejected` rows or use two cards).
-- Rejected documents table: `document_id`, `source_file`, `stage`,
-  `reason_codes_json`, `ocr_confidence`.
+- Donut: accepted vs rejected (the current run is 21 / 4).
+- Rejected documents table: `document_id`, `source_file`, `reason_codes_json`,
+  `ocr_confidence`.
 
 **Slicers:** `currency` and `invoice_date`.
 
@@ -89,6 +105,5 @@ Rejection Rate = DIVIDE([Rejected Documents], [Processed Documents])
 ```
 
 The same numbers are rendered in `data/dashboard.html` for environments where
-Power BI Desktop is not installed. Power BI is not included in this repository
-because it is a Windows desktop application and a `.pbix` binary cannot be
-reliably generated headlessly.
+Power BI Desktop is not installed. Power BI Desktop is required to open the
+`.pbix` and `.pbit`; the pipeline cannot generate the report layout headlessly.
